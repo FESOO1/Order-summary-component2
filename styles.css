@@ -13,12 +13,12 @@
 
 body {
     background: url(./images/pattern-background-desktop.svg) no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-color: hsl(225, 100%, 94%);
 }
 
 .wrapper {
-    padding-block: 50px;
+    padding-block: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,8 @@ body {
 }
 
 .summary-image {
+    display: flex;
+    justify-content: center;
     line-height: 0;
 }
 
@@ -69,6 +71,11 @@ body {
 .annual-plan > a {
     color: hsl(245, 75%, 52%);
     font-weight: 700;
+    transition: color 200ms;
+}
+
+.annual-plan > a:hover {
+    color: hsl(245, 90%, 67%);
 }
 
 .annual-inner {
@@ -96,4 +103,99 @@ body {
 .annual-plan-price {
     color: hsl(224, 23%, 55%);
     font-weight: 500;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.proceed-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 0.7rem;
+    border: 0;
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 15px hsla(224, 23%, 55%, 0.425);
+    transition: background-color 200ms;
+}
+
+.proceed-btn:hover {
+    background-color: hsl(245, 90%, 67%);
+}
+
+.cancel-btn {
+    color: hsl(224, 23%, 55%);
+    font-weight: 700;
+    font-size: 1rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+.cancel-btn:hover {
+    color: hsl(223, 47%, 23%);
+}
+
+
+/* MEDIA QEURIES */
+
+@media (max-width: 500px) {
+    .summary-container {
+        width: 90%;
+    }
+    .summary-svg {
+        width: 100%;
+        object-position: center;
+    }
+    body {
+        background: url(./images/pattern-background-mobile.svg) no-repeat;
+        background-size: cover;
+    }
+    .wrapper {
+        padding-block: 80px;
+    }
+    .summary-text {
+        padding: 35px 30px;
+    }
+    .annual-plan {
+        padding-inline: 15px;
+    }
+    .summary-text > h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .summary-text {
+        padding: 35px 20px;
+    }
+    .annual-text {
+        row-gap: 8px;
+    }
+    .annual-plan-text {
+        font-size: 0.9rem;
+    }
+    .annual-plan-price {
+        font-size: 0.8rem;
+    }
+    .annual-plan {
+        padding-block: 18px;
+        column-gap: 10px;
+    }
+    .annual-plan > a {
+        font-size: 0.9rem;
+    }
+    .summary-text > h1 {
+        font-size: 1.6rem;
+    }
 }
